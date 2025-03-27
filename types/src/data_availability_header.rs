@@ -64,6 +64,10 @@ use crate::{
     all(feature = "wasm-bindgen", target_arch = "wasm32"),
     wasm_bindgen(inspectable)
 )]
+#[cfg_attr(
+    feature = "borsh",
+    derive(borsh::BorshDeserialize, borsh::BorshSerialize)
+)]
 pub struct DataAvailabilityHeader {
     /// Merkle roots of the [`ExtendedDataSquare`] rows.
     row_roots: Vec<NamespacedHash>,

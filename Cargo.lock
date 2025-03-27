@@ -930,6 +930,7 @@ dependencies = [
  "bincode",
  "bitvec",
  "blockstore",
+ "borsh",
  "bytes",
  "celestia-proto",
  "cid",
