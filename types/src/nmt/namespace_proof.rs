@@ -60,6 +60,10 @@ pub const EMPTY_LEAVES: &[&[u8]] = &[];
 /// [`Nmt`]: crate::nmt::Nmt
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[serde(try_from = "RawProof", into = "RawProof")]
+#[cfg_attr(
+    feature = "borsh",
+    derive(borsh::BorshDeserialize, borsh::BorshSerialize)
+)]
 pub struct NamespaceProof(NmtNamespaceProof);
 
 impl NamespaceProof {
