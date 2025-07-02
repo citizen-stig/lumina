@@ -118,7 +118,7 @@ pub enum Error {
 
     /// Share sequence length exceeded.
     #[error(
-        "Sequence len must fit into {} bytes, got value {0}",
+        "Sequence len must fit into {0} bytes, got value {1}",
         appconsts::SEQUENCE_LEN_BYTES
     )]
     ShareSequenceLenExceeded(usize),
@@ -304,7 +304,7 @@ pub enum ValidationError {
 #[derive(Debug, thiserror::Error)]
 pub enum VerificationError {
     /// Not enough voting power for a commit.
-    #[error("Not enought voting power (got {0}, needed {1})")]
+    #[error("Not enough voting power (got {0}, needed {1})")]
     NotEnoughVotingPower(u64, u64),
 
     /// Other errors that can happen during verification.
@@ -534,7 +534,7 @@ pub enum UniffiError {
 
     /// Share sequence length exceeded.
     #[error(
-        "Sequence len must fit into {} bytes, got value {0}",
+        "Sequence len must fit into {0} bytes, got value {1}",
         appconsts::SEQUENCE_LEN_BYTES
     )]
     ShareSequenceLenExceeded(u64),
